@@ -1,0 +1,19 @@
+<!-- Incluimos los contenidos del archivo /partials/head.ejs -->
+<%- include('./partials/head') %>
+    <!-- Esto es JS que se va a ejecutar en el navegador del cliente -->
+    <script>
+        if (pageName == 'Lando') {
+            console.log('Estamos en la página de inicio');     
+        } else {
+            console.log('No estamos en la página de inicio');     
+        }
+    </script>
+    <h1><%= pageName %></h1>
+    <!-- Esto es EJS, se va a ejecutar en el servidor -->
+    <% if (pageName == 'Inicio') {%>
+        <p class="success">Estamos en la página de inicio 😎</p>
+    <% } else {%>
+        <p class="warning">No estamos en la página de inicio 😩</p>
+    <% } %>
+<!-- Incluimos los contenidos del archivo /partials/footer.ejs -->
+<%- include('./partials/footer') %>
